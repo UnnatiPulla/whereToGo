@@ -1,16 +1,22 @@
 import React from "react"
 
 
-const Location = ({location}) => {
-    
+const Location = ({location, setCurrentLocation}) => {
+    const displayRating = (rating) => {
+      var rate="";
+      for(var i=0; i<rating; i++){
+        rate = rate + "⭐";
+      }
+      return rate;
+    }
         return(
-        <li className="Location">
+        <li className="Location" onClick={() => setCurrentLocation(location)}>
               <div className="location">
                   <div className="location-title">
                     {location.title}
                   </div>
                   <div className="location-rating">
-                    {location.rating}
+                    {displayRating(location.rating)}
                   </div>
               </div>
           </li>

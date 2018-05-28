@@ -36,7 +36,7 @@
     text-decoration: none;
   }
   .List ul>li {
-    height: 100px;
+    height: 70px;
     font-size: 90%;
     cursor: pointer;
     overflow: hidden;
@@ -48,9 +48,9 @@
     transition: background-color .1s ease-in-out, color .1s ease-in-out;
   }
   .List ul li .location {
-    border-top: 1px solid #eee;
+    border-top: 0.5px solid #eee;
     margin: 0 2rem;
-    padding: 1rem 4px;
+    padding: 5rem 4px;
   }
   .List ul a:first-of-type li .location {
     border-top: none;
@@ -67,7 +67,7 @@
     border-color: transparent;
   }
   .List ul li .location-title {
-    color: #4a4a4a;
+    color: #415d97;
     font-family: Fauna One;
     font-size: 120%;
     font-weight: 400;
@@ -76,12 +76,12 @@
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
   }
-  .List ul li .location-body {
+  .List ul li .location-rating {
     height: 54px;
     overflow: hidden;
-    margin-top: .5rem;
+    margin-bottom: .5rem;
   }
-  .List ul li .location-body * {
+  .List ul li .location-rating * {
     font-size: 1em!important;
     margin: 0!important;
     padding: 0!important;

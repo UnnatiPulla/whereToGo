@@ -6,9 +6,17 @@ import Toolbar from "./Toolbar"
 
 class Main extends React.Component{
     state={
-        locationsArray : [],
+        locationsArray : [
+            {id:1 , title:"l1", rating: 4 },
+            {id:2,title:"l2", rating: 4 },
+            {id:3 ,title:"l3", rating: 5 }],
 
+        currentLocation: {id: null, title:"", rating: 0 },
 
+    }
+
+    setCurrentLocation =(location) => {
+        this.setState({currentLocation: location});
     }
 
 
@@ -19,8 +27,8 @@ class Main extends React.Component{
                    <Toolbar />
                 </div>
                 <div className = "Content" style={style}>
-               <List />
-               <Deets />
+               <List locationsArray={this.state.locationsArray} setCurrentLocation={this.setCurrentLocation}/>
+               <Deets currentLocation={this.state.currentLocation}/>
                </div>
             </div>
         );
