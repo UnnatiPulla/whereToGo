@@ -1,0 +1,55 @@
+
+
+.Toolbar {
+    background-color: #f3f3f3;
+    padding: 0.5rem 0; 
+    display: flex; 
+    flex-direction: row;    
+    align-items: "stretch";
+  }
+
+  .Toolbar .logo {
+    
+    color: #666;
+    font-size: 3rem;
+    float: left;
+  }
+
+  .Toolbar .logo img {
+    width: 30px;
+    padding-left: 4px;
+  }
+  
+  .Toolbar a.new-location {
+    margin-top: 2rem;
+    width: 40px;
+    float:left;
+    
+  }
+
+  .Toolbar a img {
+    float:left;
+    left: 0;
+    position: relative;
+    transition: opacity 0.25s ease-in-out;
+  }
+  .Toolbar a:hover img.Hovered {
+    float:left;
+    position: relative;
+    opacity: 0;
+  }
+  
+  .Toolbar .SignOut {
+    position: absolute;
+    top:50;
+    right:0;
+  }
+  .Toolbar .SignOut button {
+    position: absolute;
+    top:50;
+    right:0;
+    outline: none;
+  }
+  .Toolbar .SignOut button i.fas {
+    font-size: 2rem;
+  }

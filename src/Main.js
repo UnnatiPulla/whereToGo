@@ -5,6 +5,13 @@ import Deets from "./Deets"
 import Toolbar from "./Toolbar"
 
 class Main extends React.Component{
+    state={
+        locationsArray : [],
+
+
+    }
+
+
     render(){
         return (
             <div className="Main" >
@@ -21,7 +28,6 @@ class Main extends React.Component{
 }
 
 const style = {
-    
   display: "flex",
   height: "100vh",
   alignItems: "stretch",
