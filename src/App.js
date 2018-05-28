@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
 import Main from "./Main"
@@ -6,7 +6,7 @@ import Main from "./Main"
 
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="App">
