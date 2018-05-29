@@ -1,7 +1,16 @@
 import React from "react"
 import "./Deets.css"
 
-const Deets = ({currentLocation}) =>{
+const Deets = ({currentLocation, saveLocation}) =>{
+
+const handleChanges = (ev) => {
+   
+    const location = {...currentLocation}
+    location[ev.target.name] = ev.target.value;
+    saveLocation(location);
+    
+}
+
 return (
     <div className ="Deets">
         <div className="actions">
@@ -16,11 +25,23 @@ return (
                 name="title"
                 placeholder="New Location"
                 value={currentLocation.title}
+                onChange = {handleChanges}
               />
               
-              <input type="numbers" name="rating" placeholder="My Rating" value={currentLocation.rating}/>
+              <select type="number" name="rating" placeholder="My Rating" value={currentLocation.rating} onChange = {handleChanges}>
+                <option value = "1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value = "5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value = "9">9</option>
+                <option value="10">10</option>
+              </select>
             </p>
-            <textarea name="notes" placeholder="My Notes" value={currentLocation.title}></textarea>
+            <textarea name="notes" placeholder="My Notes" value={currentLocation.notes} onChange = {handleChanges}></textarea>
         </form>
     </div>
 );

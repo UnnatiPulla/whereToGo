@@ -6,11 +6,9 @@ import "./Toolbar.css"
 
 
 
-class Toolbar extends React.Component{
-    state = {
-
-    }
-    render(){
+const Toolbar = ({resetCurrentLocation}) =>{
+    
+    
         return (
             <nav className ="Toolbar">
 
@@ -18,9 +16,10 @@ class Toolbar extends React.Component{
                     <img src = {logo} alt ="whereToGoLogo"/>
                 </div>
 
-                <a className ="new-location">
+                <a className ="new-location" onClick = {resetCurrentLocation}>
                     <img src={newIcon} alt = "Add new location"/>
                     <img className="Hovered" src={newHover} alt="Add new location"/>
+                    
                 </a>
 
                 <div className = "SignOut">
@@ -32,7 +31,7 @@ class Toolbar extends React.Component{
 
             </nav>
         );
-    }
+    
 }
 
 export default Toolbar

@@ -4,7 +4,7 @@ import React from "react"
 const Location = ({location, setCurrentLocation}) => {
     const displayRating = (rating) => {
       var rate="";
-      for(var i=0; i<rating; i++){
+      for(var i=0; i<parseInt(rating); i++){
         rate = rate + "⭐";
       }
       return rate;
