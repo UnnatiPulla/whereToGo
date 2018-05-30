@@ -16,7 +16,7 @@ const Toolbar = ({resetCurrentLocation}) =>{
                     <img src = {logo} alt ="whereToGoLogo"/>
                 </div>
 
-                <a className ="new-location" onClick = {resetCurrentLocation}>
+                <a className ="new-location" onClick = {resetCurrentLocation} >
                     <img src={newIcon} alt = "Add new location"/>
                     <img className="Hovered" src={newHover} alt="Add new location"/>
                     

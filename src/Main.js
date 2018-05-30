@@ -4,6 +4,8 @@ import List from "./List"
 import Deets from "./Deets"
 import Toolbar from "./Toolbar"
 
+import base from "./base"
+
 class Main extends React.Component{
     constructor(){
         super();
@@ -15,15 +17,14 @@ class Main extends React.Component{
     }
 
     componentWillMount(){
-        const locationsArray = JSON.parse(localStorage.getItem('locationsArray'));
-        if(locationsArray){
-            this.setState({locationsArray})
-        }
+        base.syncState("locationsArray", {
+            context: this,
+            state: "locationsArray",
+            asArray: true
+        })
     }
 
-    componentDidUpdate(){
-        localStorage.setItem('locationsArray', JSON.stringify(this.state.locationsArray))
-    }
+    
  
     setCurrentLocation =(location) => {
         this.setState({currentLocation: location});
