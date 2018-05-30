@@ -1,7 +1,7 @@
 import React from "react"
 import "./Deets.css"
 
-const Deets = ({currentLocation, saveLocation}) =>{
+const Deets = ({currentLocation, saveLocation, removeCurrentLocation}) =>{
 
 const handleChanges = (ev) => {
    
@@ -15,7 +15,7 @@ return (
     <div className ="Deets">
         <div className="actions">
             <button type="button">
-                <i className="far fa-minus-square"></i>
+                <i className="far fa-minus-square" onClick={removeCurrentLocation}></i>
             </button>
         </div>
         <form>

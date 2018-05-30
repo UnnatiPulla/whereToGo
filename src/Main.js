@@ -8,17 +8,23 @@ class Main extends React.Component{
     constructor(){
         super();
     this.state={
-        locationsArray : [
-            {id:1 , title:"l1", rating: "7", notes:"nice architecture" },
-            {id:2,title:"l2", rating: "3", notes:"has good food around it" },
-            {id:3 ,title:"l3", rating: "5", notes:"good place" },
-            {id:1 , title:"l1", rating: "10", notes:"nice architecture" },],
-
+        locationsArray : [],
         currentLocation: this.blankLocation(),
 
     }
     }
 
+    componentWillMount(){
+        const locationsArray = JSON.parse(localStorage.getItem('locationsArray'));
+        if(locationsArray){
+            this.setState({locationsArray})
+        }
+    }
+
+    componentDidUpdate(){
+        localStorage.setItem('locationsArray', JSON.stringify(this.state.locationsArray))
+    }
+ 
     setCurrentLocation =(location) => {
         this.setState({currentLocation: location});
     }
@@ -33,10 +39,27 @@ class Main extends React.Component{
 
     saveLocation = (location) => {
         const locationsArray = [...this.state.locationsArray]
-        const i = locationsArray.findIndex(currentLocation => currentLocation.id === location.id)
-        locationsArray[i] = location;
+
+        if(location.id){
+            const i = locationsArray.findIndex(currentLocation => currentLocation.id === location.id)
+            locationsArray[i] = location;
+        }
+        else{
+            location.id=Date.now()
+            locationsArray.push(location);
+        }
         this.setState({locationsArray, currentLocation: location})
         
+    }
+
+    removeCurrentLocation = (location) => {
+        const locationsArray = [...this.state.locationsArray]
+        const i = locationsArray.findIndex(location => location.id === this.state.currentLocation.id)
+        if(i>-1){
+        locationsArray.splice(i,1);
+        this.setState({locationsArray});
+        }
+        this.resetCurrentLocation();
     }
 
     render(){
@@ -50,7 +73,7 @@ class Main extends React.Component{
                           setCurrentLocation={this.setCurrentLocation}
                     />
                     <Deets currentLocation={this.state.currentLocation} 
-                           saveLocation={this.saveLocation}
+                           saveLocation={this.saveLocation} removeCurrentLocation={this.removeCurrentLocation}
                     />
                </div>
             </div>

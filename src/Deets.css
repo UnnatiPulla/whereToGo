@@ -7,7 +7,7 @@
     flex-grow: 1;
     padding: 0 3rem;
   }
-  .Deets .form-actions {
+  .Deets .actions {
     padding-top: 1rem;
     margin-left: -2rem;
     display: -ms-flexbox;
@@ -19,7 +19,7 @@
     border: none;
     
   }
-  .Deets button i.fa {
+  .Deets button i.far {
     color: #999;
     font-size: 2rem;
     margin: 0;
