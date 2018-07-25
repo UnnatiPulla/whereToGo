@@ -14,18 +14,20 @@ return (
     <div className ="SignIn"> 
         <header className="Header">
             <img src={logo} alt=""/>
-            <span class = "title"> Where To Go</span>
+            <span className = "title"> Where To Go</span>
         </header>
         <main>
+            <button disabled >
             <h1>Please Sign In Below!</h1>
-            <button class="google" onClick={authenticate}>
+            </button>
+            <button className="google" onClick={authenticate}>
                 <img src={googleLogo} alt ="Google Logo"/>
                 Sign In with Google
             </button>
 
         </main>   
     </div>
-    
+
 );
 }
 
