@@ -1,6 +1,7 @@
 import firebase from "firebase/app"
 import "firebase/database"
 import Rebase from "re-base"
+import 'firebase/auth'
 
 
 const config = {
@@ -13,7 +14,8 @@ const config = {
   };
   const app = firebase.initializeApp(config);
 
-
+  export const googleProvider = new firebase.auth.GoogleAuthProvider()
+  export const auth = firebase.auth()
 export default Rebase.createClass(app.database());
 
 

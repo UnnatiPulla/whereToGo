@@ -6,7 +6,7 @@ import "./Toolbar.css"
 
 
 
-const Toolbar = ({resetCurrentLocation}) =>{
+const Toolbar = ({resetCurrentLocation, signOut}) =>{
     
     
         return (
@@ -22,7 +22,7 @@ const Toolbar = ({resetCurrentLocation}) =>{
                     
                 </a>
 
-                <div className = "SignOut">
+                <div className = "SignOut" onClick={signOut}>
                     <button> 
                         Sign Out
                         <i className ="fas fa-sign-out-alt"></i>

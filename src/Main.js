@@ -67,7 +67,7 @@ class Main extends React.Component{
         return (
             <div className="Main" >
                <div className="Toolbar">
-                   <Toolbar resetCurrentLocation={this.resetCurrentLocation}/>
+                   <Toolbar resetCurrentLocation={this.resetCurrentLocation} signOut={this.props.signOut}/>
                 </div>
                 <div className = "Content" style={style}>
                     <List locationsArray={this.state.locationsArray} 

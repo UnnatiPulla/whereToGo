@@ -23,19 +23,18 @@
   .Toolbar a.new-location {
     margin-top: 2rem;
     width: 40px;
-    float:left;
-    
+    position: relative;
+    left:30px;
+    top: 0px;
   }
 
   .Toolbar a img {
-    float:left;
+    
     left: 0;
-    position: relative;
+    position: absolute;
     transition: opacity 0.25s ease-in-out;
   }
   .Toolbar a:hover img.Hovered {
-    float:left;
-    position: relative;
     opacity: 0;
   }
   
